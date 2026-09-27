@@ -1,182 +1,781 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SBT Values — portfolio, services and ordering." />
-  <title>SBT Values | Portfolio & Orders</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-:root{--ink:#17221d;--muted:#68736e;--paper:#f7f7f2;--white:#fff;--accent:#c6a15b;--line:#dfe2dc;--soft:#eef0e9;--shadow:0 18px 50px rgba(20,32,25,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}.topbar{height:76px;background:rgba(247,247,242,.92);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-size:18px}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--ink);color:#fff;font-weight:700;font-size:13px}.topbar nav{display:flex;gap:28px;color:#52605a;font-size:14px}.topbar nav a:hover{color:var(--ink)}.header-actions{display:flex;gap:9px}.dark,.outline,.ghost{padding:11px 18px;border-radius:10px;font-weight:700}.dark{background:var(--ink);color:#fff}.outline{background:transparent;border:1px solid var(--ink);color:var(--ink)}.ghost{background:transparent;color:var(--ink)}.large{padding:14px 21px;display:inline-block}.hero{min-height:650px;display:grid;grid-template-columns:1.05fr .95fr;gap:5%;align-items:center;padding:80px 9% 70px;overflow:hidden}.eyebrow,.section-label{font-size:11px;letter-spacing:2px;font-weight:700;color:#7a6948}.hero h1{font:700 clamp(48px,6vw,82px)/.98 "Playfair Display",serif;margin:18px 0}.hero h1 em,h2 em{color:#9b7940;font-style:normal}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:570px}.hero-buttons{display:flex;gap:12px;margin:30px 0}.trust-row{display:flex;gap:20px;flex-wrap:wrap;color:#637068;font-size:12px}.hero-art{height:470px;border-radius:34px;background:#e4e7dd;position:relative;overflow:hidden;box-shadow:var(--shadow)}.orb{position:absolute;border-radius:50%;filter:blur(1px)}.orb1{width:360px;height:360px;background:#d1bc8c;right:-70px;top:-50px}.orb2{width:290px;height:290px;background:#aeb8a9;left:-80px;bottom:-70px}.art-card{position:absolute;inset:70px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.8);border-radius:26px;backdrop-filter:blur(12px);box-shadow:0 30px 70px rgba(25,38,29,.12)}.art-card span{font-size:58px;font-weight:700;letter-spacing:-4px}.art-card strong{font-size:18px;letter-spacing:7px;margin-top:8px}.art-card small{margin-top:20px;color:var(--muted)}.section{padding:100px 9%}.tinted{background:#eef0e9}.two-col,.order-layout{display:grid;grid-template-columns:1fr 1fr;gap:8%;margin-top:30px}.section h2{font:700 clamp(38px,5vw,60px)/1.05 "Playfair Display",serif;margin:15px 0}.section p{color:var(--muted);line-height:1.8}.stats{display:flex;gap:30px;margin-top:35px}.stats div{display:flex;flex-direction:column;gap:4px}.stats b{font-size:24px}.stats span{font-size:12px;color:var(--muted)}.section-head,.panel-head,.office-top{display:flex;justify-content:space-between;align-items:center;gap:20px}.section-head h2{margin:8px 0 0}.pill,.admin-chip{font-size:12px;border:1px solid var(--line);padding:8px 12px;border-radius:30px;color:var(--muted);background:#fff}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.gallery-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}.gallery-image{height:220px;background:linear-gradient(135deg,#d7dccf,#b4c0b2);display:grid;place-items:center;font-size:35px;font-weight:700;color:#fff}.gallery-image img{width:100%;height:100%;object-fit:cover}.gallery-card div:last-child{padding:18px}.gallery-card h3{margin:0 0 7px}.gallery-card p{margin:0;font-size:13px}.form-card{background:#fff;padding:28px;border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--line)}label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700;margin-bottom:16px}input,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;outline:none;background:#fbfbf8;color:var(--ink)}input:focus,textarea:focus{border-color:#9c9f93}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.full{width:100%}.muted{color:var(--muted);font-size:12px;line-height:1.5}.office{min-height:calc(100vh - 76px);display:grid;grid-template-columns:240px 1fr}.sidebar{background:#17221d;color:#fff;padding:25px 18px;display:flex;flex-direction:column;gap:8px}.side-brand{display:flex;align-items:center;gap:10px;margin-bottom:25px;padding:0 7px}.sidebar .brand-mark{background:#fff;color:var(--ink)}.sidebar button{background:transparent;color:#b9c2bd;text-align:left;padding:12px 11px;border-radius:9px}.sidebar button:hover,.sidebar .side-active{background:#2a3730;color:#fff}.count{float:right;background:#c6a15b;color:#17221d;padding:2px 7px;border-radius:20px;font-size:10px}.side-bottom{margin-top:auto;border-top:1px solid #344039;padding-top:15px}.office-content{padding:45px 5%;background:#f4f5f0}.office-top{margin-bottom:30px}.office-top h1{font:700 42px "Playfair Display",serif;margin:7px 0}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:20px}.metric{background:#fff;padding:25px;border:1px solid var(--line);border-radius:16px}.metric span{display:block;color:var(--muted);font-size:12px}.metric b{display:block;font-size:34px;margin-top:12px}.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:24px}.panel-head{margin-bottom:18px}.panel h3{margin:0}.order-row,.customer-row{display:grid;grid-template-columns:1.2fr 1fr 1.4fr .7fr;gap:15px;padding:15px 0;border-top:1px solid var(--line);align-items:center;font-size:13px}.order-row:first-child{border-top:0}.status{display:inline-block;padding:6px 9px;border-radius:20px;background:#edf0e8;color:#536057;font-size:11px}.gallery-add{display:grid;grid-template-columns:1fr 1.2fr 1.2fr auto;gap:10px;margin-bottom:25px}.admin-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.admin-item{border:1px solid var(--line);border-radius:12px;overflow:hidden}.admin-item .gallery-image{height:140px}.admin-item .admin-body{padding:12px}.admin-body h4{margin:0 0 6px}.danger{background:#fff0ef;color:#a33;border:1px solid #f0cdca;padding:8px 10px;border-radius:8px}.modal{position:fixed;inset:0;background:rgba(15,22,18,.55);display:grid;place-items:center;z-index:50;padding:20px}.login-card{position:relative;background:#fff;width:min(420px,100%);border-radius:22px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.25)}.login-card h2{font:700 40px "Playfair Display",serif;margin:10px 0}.login-card input{margin-bottom:10px}.close{position:absolute;right:15px;top:12px;background:transparent;font-size:28px;color:var(--muted)}.social{width:100%;padding:13px;border-radius:10px;margin:6px 0;background:#f5f5f2;border:1px solid var(--line);font-weight:700}.social span{margin-right:10px}.divider{text-align:center;margin:16px 0;border-top:1px solid var(--line);height:1px}.divider span{position:relative;top:-10px;background:#fff;padding:0 10px;color:#999;font-size:11px}.toast{position:fixed;right:20px;bottom:20px;background:var(--ink);color:#fff;padding:14px 18px;border-radius:10px;opacity:0;transform:translateY(10px);transition:.25s;z-index:70}.toast.show{opacity:1;transform:none}@media(max-width:850px){.hero,.two-col,.order-layout{grid-template-columns:1fr}.hero{padding-top:55px}.hero-art{height:360px}.gallery-grid,.admin-gallery{grid-template-columns:1fr 1fr}.topbar nav{display:none}.office{grid-template-columns:1fr}.sidebar{position:static}.office-content{padding:30px 5%}.gallery-add,.metric-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.order-row,.customer-row{grid-template-columns:1fr 1fr}}@media(max-width:520px){.gallery-grid,.admin-gallery{grid-template-columns:1fr}.hero h1{font-size:48px}.section{padding:70px 6%}.hero{padding-left:6%;padding-right:6%}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBT Values - Hydro Fluid Portfolio & Admin Portal</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind Configuration for Water Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean: {
+              950: '#030816',
+              900: '#071328',
+              800: '#0d2246',
+              700: '#14386d',
+              500: '#06b6d4',
+              400: '#22d3ee',
+              300: '#67e8f9',
+            },
+            aqua: '#00f2fe',
+            valve: '#f59e0b',
+          },
+          animation: {
+            'flow-slow': 'waterFlow 12s ease-in-out infinite alternate',
+            'bubble-float': 'bubbleFloat 8s ease-in-out infinite',
+            'spin-valve': 'rotateValve 0.8s ease-out forwards',
+          },
+          keyframes: {
+            waterFlow: {
+              '0%': { transform: 'scale(1) rotate(0deg)' },
+              '50%': { transform: 'scale(1.15) rotate(180deg)' },
+              '100%': { transform: 'scale(1) rotate(360deg)' }
+            },
+            bubbleFloat: {
+              '0%': { transform: 'translateY(100%) opacity(0)' },
+              '50%': { opacity: '0.6' },
+              '100%': { transform: 'translateY(-100%) opacity(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-</style>
+  <style>
+    /* Fluid Glassmorphism & Custom Water Styles */
+    body {
+      background-color: #030816;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hydro-glass {
+      background: rgba(7, 19, 40, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(0, 242, 254, 0.08);
+    }
+
+    .hydro-glass-card {
+      background: rgba(13, 34, 70, 0.5);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(103, 232, 249, 0.15);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hydro-glass-card:hover {
+      border-color: rgba(0, 242, 254, 0.5);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+      transform: translateY(-4px);
+    }
+
+    /* Hydraulic Pipe & Valve Animation Visuals */
+    .pipe-line {
+      position: relative;
+      background: linear-gradient(90deg, #0d2246 0%, #14386d 50%, #0d2246 100%);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 0 10px rgba(34, 211, 238, 0.2);
+    }
+
+    .water-stream {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 0%;
+      background: linear-gradient(90deg, #00f2fe, #22d3ee, #06b6d4);
+      box-shadow: 0 0 15px #00f2fe;
+      transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .valve-wheel {
+      transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .valve-open {
+      transform: rotate(360deg) scale(1.05);
+      filter: drop-shadow(0 0 12px #00f2fe);
+    }
+
+    .ripple {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ripple::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, #00f2fe 10%, transparent 10.01%);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale(10, 10);
+      opacity: 0;
+      transition: transform .5s, opacity 1s;
+    }
+
+    .ripple:active::after {
+      transform: scale(0, 0);
+      opacity: .3;
+      transition: 0s;
+    }
+  </style>
 </head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="#home" onclick="showPublic()">
-      <span class="brand-mark">SB</span>
-      <span><b>SBT</b> Values</span>
-    </a>
-    <nav id="publicNav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#order">Order</a>
-    </nav>
-    <div class="header-actions">
-      <button class="ghost" onclick="openLogin()">Login</button>
-      <button class="dark" onclick="showOffice()">Office</button>
+<body class="relative min-h-screen flex flex-col justify-between">
+
+  <!-- DYNAMIC HYDRO FLUID BACKGROUND LAYER -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <!-- Fluid Animated Glow Orbs -->
+    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-ocean-500/20 rounded-full blur-[120px] animate-flow-slow"></div>
+    <div class="absolute top-1/2 -right-40 w-[700px] h-[700px] bg-indigo-600/15 rounded-full blur-[140px] animate-flow-slow" style="animation-delay: -4s;"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[500px] h-[500px] bg-aqua/10 rounded-full blur-[100px] animate-flow-slow" style="animation-delay: -8s;"></div>
+    
+    <!-- Water Pipe Lines Overlay -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22d3ee_1px,transparent_1px)] [background-size:32px_32px]"></div>
+  </div>
+
+  <!-- TOP NAVIGATION HEADER & VIEW SWITCHER -->
+  <header class="sticky top-0 z-50 hydro-glass border-b border-ocean-400/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="showSection('public')">
+        <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-blue-600 p-[2px] shadow-lg shadow-cyan-500/20">
+          <div class="w-full h-full bg-ocean-950 rounded-[14px] flex items-center justify-center font-black text-xl text-aqua">
+            SBT
+          </div>
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-wider text-white block">SBT VALUES</span>
+          <span class="text-[10px] text-ocean-300 tracking-widest uppercase block -mt-1 font-semibold">Hydro Portfolio & Portal</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-slate-300">
+        <a href="#values-section" onclick="showSection('public')" class="hover:text-aqua transition-colors flex items-center gap-1.5">
+          <i data-lucide="droplet" class="w-4 h-4 text-aqua"></i> Values Flow
+        </a>
+        <a href="#gallery-section" onclick="showSection('public')" class="hover:text-aqua transition-colors flex items-center gap-1.5">
+          <i data-lucide="waves" class="w-4 h-4 text-cyan-400"></i> Hydro Showcase
+        </a>
+        <a href="#order-section" onclick="showSection('public')" class="hover:text-aqua transition-colors flex items-center gap-1.5">
+          <i data-lucide="send" class="w-4 h-4 text-amber-400"></i> Dispatch Order
+        </a>
+      </nav>
+
+      <!-- View Switcher Controls (Public / SSO Login / Office Admin) -->
+      <div class="flex items-center gap-2 bg-ocean-900/80 p-1.5 rounded-2xl border border-ocean-700">
+        <button id="nav-btn-public" onclick="showSection('public')" class="px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-cyan-500 text-ocean-950 shadow-md">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i> Public Site
+        </button>
+        <button id="nav-btn-login" onclick="showSection('login')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5">
+          <i data-lucide="key-round" class="w-3.5 h-3.5 text-aqua"></i> SSO Login
+        </button>
+        <button id="nav-btn-office" onclick="showSection('office')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-valve"></i> Office Admin
+        </button>
+      </div>
+
     </div>
   </header>
 
-  <main id="publicView">
-    <section id="home" class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">SBT VALUES • TRUST • QUALITY • SERVICE</span>
-        <h1>Ideas that create <em>real value.</em></h1>
-        <p>Explore SBT Values, see our work, and send an order or enquiry directly to our team.</p>
-        <div class="hero-buttons">
-          <a class="dark large" href="#gallery">View our work</a>
-          <a class="outline large" href="#order">Place an order</a>
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10 flex-1">
+
+    <!-- ================================================================= -->
+    <!-- SECTION 1: PUBLIC PORTFOLIO & HYDRAULIC ORDERING INTERFACE        -->
+    <!-- ================================================================= -->
+    <section id="section-public" class="max-w-7xl mx-auto px-6 py-12 space-y-24">
+      
+      <!-- Hero Section with Interactive Water Valve Flow Control -->
+      <div class="text-center space-y-6 pt-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full hydro-glass text-aqua text-xs font-bold uppercase tracking-widest border border-cyan-500/30">
+          <i data-lucide="sparkles" class="w-4 h-4 animate-spin"></i> Interactive Water Flow Driven Architecture
         </div>
-        <div class="trust-row">
-          <span>✓ Quality focused</span><span>✓ Customer first</span><span>✓ Reliable service</span>
+        
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight max-w-4xl mx-auto leading-tight">
+          Unlocking Excellence Through <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-aqua via-cyan-300 to-blue-500">Fluid SBT Values</span>
+        </h1>
+        
+        <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          Commission services, inspect our live company showcase, and trigger automated office notifications through integrated hydraulic valve mechanisms.
+        </p>
+
+        <!-- HYDRAULIC VALVE CONTROL INTERACTIVE DEMO -->
+        <div class="pt-8 max-w-3xl mx-auto">
+          <div class="hydro-glass p-6 rounded-3xl relative overflow-hidden">
+            <div class="text-xs font-bold text-cyan-300 uppercase tracking-widest mb-4 flex items-center justify-between">
+              <span>Interactive Hydro-Pipeline Controller</span>
+              <span id="valve-status-text" class="text-amber-400 font-mono">VALVE CLOSED [0% FLOW]</span>
+            </div>
+
+            <div class="flex items-center justify-between gap-4 relative">
+              <!-- Valve Handle Button -->
+              <div class="flex flex-col items-center">
+                <button id="main-valve-btn" onclick="toggleMainValve()" class="valve-wheel relative w-20 h-20 rounded-full bg-gradient-to-tr from-amber-500 via-valve to-yellow-300 p-1 shadow-xl hover:scale-105 transition-transform flex items-center justify-center">
+                  <div class="w-full h-full bg-ocean-950 rounded-full flex items-center justify-center border-2 border-valve">
+                    <i data-lucide="disc" class="w-10 h-10 text-valve"></i>
+                  </div>
+                </button>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-2">Turn Valve</span>
+              </div>
+
+              <!-- Pipe Stream -->
+              <div class="flex-1 h-6 pipe-line rounded-full overflow-hidden relative flex items-center px-1">
+                <div id="main-water-stream" class="water-stream rounded-full"></div>
+                <div class="absolute inset-0 flex justify-around items-center text-[9px] font-mono font-bold text-slate-400/60 pointer-events-none">
+                  <span>PIPE-A</span>
+                  <span>FLOW METRICS</span>
+                  <span>DISPATCH</span>
+                </div>
+              </div>
+
+              <!-- Output Pressure Meter -->
+              <div class="w-20 text-center hydro-glass-card p-3 rounded-2xl">
+                <div class="text-[10px] text-slate-400 font-bold uppercase">PSI Flow</div>
+                <div id="psi-value" class="text-xl font-black text-slate-500 font-mono">0</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="hero-art">
-          <div class="orb orb1"></div><div class="orb orb2"></div>
-          <div class="art-card"><span>SBT</span><strong>VALUES</strong><small>Built with purpose.</small></div>
+
+      <!-- Core SBT Values Flow Cards -->
+      <div id="values-section" class="space-y-8">
+        <div class="text-center">
+          <span class="text-xs font-bold text-aqua uppercase tracking-widest block">Foundational Tenets</span>
+          <h2 class="text-3xl font-extrabold text-white mt-1">SBT Core Principles</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Value 1 -->
+          <div class="hydro-glass-card p-8 rounded-3xl relative group overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-aqua mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Purity & Transparency</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Clear milestone visibility, open development streams, and honest communication across all contract deliverables.
+            </p>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="hydro-glass-card p-8 rounded-3xl relative group overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Uncompromising Craft</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Precision engineered solutions built with fluid adaptability, ensuring robust high-load enterprise performance.
+            </p>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="hydro-glass-card p-8 rounded-3xl relative group overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Fluid Innovation</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Constantly evolving cloud tech architectures that adapt seamlessly to your changing business landscape.
+            </p>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <section id="about" class="section">
-      <div class="section-label">01 — ABOUT</div>
-      <div class="two-col">
-        <div><h2>More than a portfolio.<br><em>A relationship.</em></h2></div>
-        <div><p>SBT Values is designed around a simple idea: every product, service and customer interaction should create lasting value.</p>
-        <div class="stats"><div><b>100%</b><span>Customer focus</span></div><div><b>24/7</b><span>Enquiry access</span></div><div><b>1</b><span>Trusted team</span></div></div></div>
-      </div>
-    </section>
+      <!-- Live Dynamic Gallery (Uploaded via Office Interface) -->
+      <div id="gallery-section" class="space-y-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Live Office Stream</span>
+            <h2 class="text-3xl font-extrabold text-white mt-1 flex items-center gap-2">
+              <i data-lucide="waves" class="text-aqua"></i> Featured Showcase Gallery
+            </h2>
+          </div>
+          <p class="text-slate-400 text-xs max-w-sm">
+            Projects published in the Office Admin Portal appear dynamically in this public showcase.
+          </p>
+        </div>
 
-    <section id="gallery" class="section tinted">
-      <div class="section-head"><div><div class="section-label">02 — GALLERY</div><h2>Our work & products</h2></div><span class="pill">Updated by office</span></div>
-      <div id="galleryGrid" class="gallery-grid"></div>
-    </section>
-
-    <section id="order" class="section">
-      <div class="section-label">03 — ORDER / ENQUIRY</div>
-      <div class="order-layout">
-        <div><h2>Tell us what<br><em>you need.</em></h2><p>Submit your details and our office team can follow up. Signed-in customers can have their basic profile information prefilled.</p></div>
-        <form id="orderForm" class="form-card" onsubmit="submitOrder(event)">
-          <div class="form-row"><label>Name<input id="customerName" required placeholder="Your name"></label><label>Email<input id="customerEmail" type="email" required placeholder="you@example.com"></label></div>
-          <div class="form-row"><label>Phone<input id="customerPhone" required placeholder="+91 ..."></label><label>Item / Service<input id="orderItem" required placeholder="What would you like?"></label></div>
-          <label>Message<textarea id="orderMessage" rows="4" placeholder="Quantity, size, requirements, delivery details..."></textarea></label>
-          <button class="dark large full">Send order / enquiry</button>
-          <small class="muted">Demo mode: the order is stored in this browser. Connect the backend email endpoint before launch.</small>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <main id="officeView" class="office hidden">
-    <aside class="sidebar">
-      <div class="side-brand"><span class="brand-mark">SB</span><b>SBT Values</b></div>
-      <button class="side-active" onclick="officeTab('dashboard')">▦ Dashboard</button>
-      <button onclick="officeTab('orders')">▤ Orders <span id="orderCount" class="count">0</span></button>
-      <button onclick="officeTab('galleryAdmin')">▧ Gallery</button>
-      <button onclick="officeTab('customers')">◉ Customers</button>
-      <div class="side-bottom"><button onclick="showPublic()">← Public website</button><button onclick="logout()">Log out</button></div>
-    </aside>
-    <section class="office-content">
-      <div class="office-top"><div><span class="eyebrow">SBT VALUES / OFFICE</span><h1 id="officeTitle">Dashboard</h1></div><span class="admin-chip">● Office mode</span></div>
-
-      <div id="dashboardTab" class="office-tab">
-        <div class="metric-grid"><div class="metric"><span>Total orders</span><b id="metricOrders">0</b></div><div class="metric"><span>Gallery items</span><b id="metricGallery">0</b></div><div class="metric"><span>Customers</span><b id="metricCustomers">0</b></div></div>
-        <div class="panel"><div class="panel-head"><h3>Recent orders</h3><button class="outline" onclick="officeTab('orders')">View all</button></div><div id="recentOrders"></div></div>
+        <div id="public-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Gallery items rendered dynamically via JavaScript -->
+        </div>
       </div>
 
-      <div id="ordersTab" class="office-tab hidden">
-        <div class="panel"><div class="panel-head"><h3>Orders & enquiries</h3><span class="muted">Newest first</span></div><div id="allOrders"></div></div>
-      </div>
+      <!-- Hydraulic Service Ordering Section -->
+      <div id="order-section" class="max-w-3xl mx-auto pt-8">
+        <div class="hydro-glass p-8 md:p-12 rounded-3xl border border-cyan-500/30 shadow-2xl relative">
+          
+          <div class="text-center space-y-2 mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-valve text-xs font-bold uppercase tracking-wider">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i> Order Dispatch Channel
+            </span>
+            <h2 class="text-3xl font-black">Commission an SBT Project</h2>
+            <p class="text-slate-400 text-xs">Filing an order opens the dispatch valve and emails client data to the office team.</p>
+          </div>
 
-      <div id="galleryAdminTab" class="office-tab hidden">
-        <div class="panel">
-          <div class="panel-head"><h3>Manage gallery</h3><span class="muted">Anything added here appears publicly</span></div>
-          <form class="gallery-add" onsubmit="addGallery(event)">
-            <input id="galleryTitle" required placeholder="Item / company / project name">
-            <input id="galleryImage" placeholder="Image URL (or use a hosted image)">
-            <input id="galleryDescription" placeholder="Short description">
-            <button class="dark">Add item</button>
+          <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Client Full Name</label>
+                <input type="text" id="order-name" required placeholder="e.g. Jordan Vance" class="w-full px-4 py-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Client Email</label>
+                <input type="email" id="order-email" required placeholder="j.vance@enterprise.com" class="w-full px-4 py-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Phone Number</label>
+                <input type="tel" id="order-phone" required placeholder="+1 (555) 019-2834" class="w-full px-4 py-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Core Value Alignment</label>
+                <select id="order-value" class="w-full px-4 py-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition">
+                  <option>Purity & Transparency</option>
+                  <option>Uncompromising Craft</option>
+                  <option>Fluid Innovation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Project Scope & Specifications</label>
+              <textarea id="order-details" rows="4" required placeholder="Describe your project goals, required tech, and timeline..." class="w-full p-4 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition"></textarea>
+            </div>
+
+            <!-- Animated Submit Button with Valve Trigger -->
+            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-400 to-blue-600 text-ocean-950 font-black text-base shadow-xl shadow-cyan-500/20 hover:opacity-95 transition flex items-center justify-center gap-2">
+              <i data-lucide="disc" class="w-5 h-5 text-ocean-950"></i> Trigger Valve & Send Order Alert Email
+            </button>
           </form>
-          <div id="adminGallery" class="admin-gallery"></div>
+
+          <!-- Order Confirmation Overlay -->
+          <div id="order-success-msg" class="hidden text-center py-8 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 flex items-center justify-center mx-auto">
+              <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white">Order Valve Opened & Dispatched!</h3>
+            <p class="text-slate-300 text-sm max-w-md mx-auto">
+              Your details have been registered and an automated notification email has been dispatched to <span class="text-aqua font-mono">office@sbtvalues.com</span>.
+            </p>
+            <button onclick="resetOrderForm()" class="px-6 py-2.5 rounded-xl bg-ocean-800 text-xs font-bold hover:bg-ocean-700 transition">Submit Another Request</button>
+          </div>
+
         </div>
       </div>
 
-      <div id="customersTab" class="office-tab hidden">
-        <div class="panel"><div class="panel-head"><h3>Customers</h3><span class="muted">Collected from orders/login</span></div><div id="customersList"></div></div>
-      </div>
     </section>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 2: SSO LOGIN WITH INTERACTIVE SBT VALUES WHEEL            -->
+    <!-- ================================================================= -->
+    <section id="section-login" class="hidden max-w-5xl mx-auto px-6 py-16">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <!-- SBT Values Wheel Alignment -->
+        <div class="hydro-glass p-8 rounded-3xl border border-cyan-500/30 relative">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-aqua text-[10px] font-bold uppercase tracking-wider mb-4 border border-cyan-500/20">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Integrated SSO Authentication Core
+          </div>
+          <h2 class="text-2xl font-black mb-2">Inspect SBT Values First</h2>
+          <p class="text-slate-400 text-xs mb-6">Click a principle to align your authentication session context.</p>
+
+          <!-- Wheel Items -->
+          <div class="space-y-3">
+            <div onclick="selectWheelValue(0)" id="wheel-0" class="p-4 rounded-2xl bg-ocean-900 border border-cyan-400/50 cursor-pointer transition">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-cyan-500 text-ocean-950 font-bold"><i data-lucide="droplet" class="w-5 h-5"></i></div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Fluid Transparency</h4>
+                  <p class="text-[11px] text-slate-400">Open-source compliance & zero hidden overheads.</p>
+                </div>
+              </div>
+            </div>
+
+            <div onclick="selectWheelValue(1)" id="wheel-1" class="p-4 rounded-2xl bg-ocean-950/60 border border-ocean-800 cursor-pointer transition">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-ocean-800 text-slate-400"><i data-lucide="award" class="w-5 h-5"></i></div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Industrial Rigor</h4>
+                  <p class="text-[11px] text-slate-400">Automated integration testing and high pressure fault tolerance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OAuth Sign-In Panel -->
+        <div class="hydro-glass p-8 rounded-3xl text-center shadow-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-amber-400 p-[2px] mx-auto mb-4">
+            <div class="w-full h-full bg-ocean-950 rounded-[14px] flex items-center justify-center font-black text-aqua">SBT</div>
+          </div>
+          <h3 class="text-2xl font-extrabold text-white">Public Unified Sign-In</h3>
+          <p class="text-slate-400 text-xs mt-1 mb-8">Authenticate with official OAuth providers</p>
+
+          <div id="oauth-actions" class="space-y-4">
+            <!-- Google Sign-In -->
+            <button onclick="simulateOAuth('Google')" class="w-full py-3.5 px-4 rounded-xl bg-ocean-900 hover:bg-ocean-800 border border-ocean-700 font-bold text-sm flex items-center justify-center gap-3 transition">
+              <svg class="w-5 h-5" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              Sign in with Google
+            </button>
+
+            <!-- Apple Sign-In -->
+            <button onclick="simulateOAuth('Apple')" class="w-full py-3.5 px-4 rounded-xl bg-ocean-900 hover:bg-ocean-800 border border-ocean-700 font-bold text-sm flex items-center justify-center gap-3 transition">
+              <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 170 170">
+                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.82.13-9.62-1.92-14.42-6.13-3.12-2.73-7.01-7.38-11.67-13.97-6.22-8.78-11.12-18.77-14.7-29.98-3.58-11.2-5.37-21.99-5.37-32.36 0-14.33 3.65-26.24 10.95-35.73 7.3-9.48 16.48-14.31 27.54-14.48 4.82 0 10.05 1.15 15.7 3.44 5.64 2.29 9.38 3.44 11.22 3.44 1.57 0 5.43-1.19 11.58-3.57 6.14-2.38 11.36-3.48 15.65-3.3 12.21.54 21.82 4.98 28.84 13.33-10.95 6.64-16.32 15.82-16.11 27.54.21 9.21 3.73 16.89 10.55 23.03 6.82 6.14 15.01 9.57 24.58 10.28-.96 5.86-2.58 11.64-4.86 17.34zM119.22 31.25c0-7.14 2.58-13.88 7.74-20.22 5.16-6.34 11.75-10.23 19.78-11.67.21 1.08.32 2.05.32 2.91 0 7.02-2.61 13.79-7.83 20.31-5.22 6.52-11.83 10.37-19.83 11.55-.08-.82-.18-1.78-.18-2.88z"/>
+              </svg>
+              Sign in with Apple
+            </button>
+          </div>
+
+          <!-- Authenticated User Info Display -->
+          <div id="user-info-card" class="hidden bg-ocean-950 p-6 rounded-2xl border border-cyan-500/30 text-center">
+            <img id="user-avatar" src="" class="w-16 h-16 rounded-full mx-auto mb-3 border-2 border-cyan-400 shadow-md" />
+            <span id="user-provider-badge" class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase">Google Session</span>
+            <h4 id="user-name" class="text-lg font-bold text-white mt-1">Sarah Jenkins</h4>
+            <p id="user-email" class="text-xs text-slate-400 mb-4">sarah.jenkins@gmail.com</p>
+            <button onclick="logoutOAuth()" class="w-full py-2.5 rounded-xl bg-ocean-800 text-xs font-bold text-slate-300 hover:text-white transition">Sign Out Session</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 3: OFFICE ADMIN PORTAL & GALLERY TAB MANAGER               -->
+    <!-- ================================================================= -->
+    <section id="section-office" class="hidden max-w-6xl mx-auto px-6 py-12">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-8 border-b border-ocean-700 gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-3xl font-extrabold text-white">SBT Office Headquarters Portal</h1>
+            <span class="px-3 py-0.5 rounded-full bg-amber-500/10 text-valve border border-amber-500/20 text-xs font-bold flex items-center gap-1">
+              <i data-lucide="lock" class="w-3 h-3"></i> Internal Confidential
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs mt-1">Manage public gallery items, monitor email order alerts, and configure hydro flow metrics.</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="px-4 py-2 rounded-xl bg-ocean-900 border border-ocean-700 text-xs font-bold text-cyan-300 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-emerald-400 w-4 h-4"></i> Authorized Admin Session
+          </div>
+        </div>
+      </div>
+
+      <!-- Office Admin Dashboard Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+        
+        <!-- Gallery Upload Form (Feeds Public Showcase) -->
+        <div class="lg:col-span-2 hydro-glass p-8 rounded-3xl border border-cyan-500/30">
+          <h3 class="text-xl font-bold flex items-center gap-2 mb-2">
+            <i data-lucide="plus-circle" class="text-cyan-400"></i> Gallery Tab: Publish Item / Photo to Public Site
+          </h3>
+          <p class="text-slate-400 text-xs mb-6">Uploading items here dynamically updates the showcase grid on the public portfolio interface.</p>
+
+          <form onsubmit="handleGalleryUpload(event)" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Item Title</label>
+                <input type="text" id="gallery-title" required placeholder="e.g. SBT Hydro Innovation Hub" class="w-full p-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Category Badge</label>
+                <select id="gallery-category" class="w-full p-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition">
+                  <option>Sustainability</option>
+                  <option>Fintech Solution</option>
+                  <option>Enterprise Automation</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Company Photo URL (Unsplash or CDN)</label>
+              <input type="url" id="gallery-image" placeholder="https://images.unsplash.com/photo-..." class="w-full p-3.5 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Item Description & Impact</label>
+              <textarea id="gallery-desc" rows="3" required placeholder="Details regarding company project milestone..." class="w-full p-4 bg-ocean-950 border border-ocean-700 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400 transition"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-ocean-950 font-black text-sm shadow-xl shadow-cyan-500/20 transition flex items-center justify-center gap-2">
+              <i data-lucide="upload" class="w-4 h-4"></i> Publish Live to Public Gallery
+            </button>
+          </form>
+        </div>
+
+        <!-- Office Order & Email Monitor Sidebar -->
+        <div class="space-y-6">
+          
+          <div class="hydro-glass p-6 rounded-3xl border border-ocean-700">
+            <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4"></i> Office Email Dispatch Status
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Order form submissions route email payloads automatically to designated office inboxes.
+            </p>
+            <div class="mt-4 p-3 bg-ocean-950 rounded-xl border border-ocean-800 text-xs flex items-center justify-between">
+              <span class="text-slate-400">Target Email:</span>
+              <span class="text-aqua font-mono font-bold">office@sbtvalues.com</span>
+            </div>
+          </div>
+
+          <!-- Recently Published Gallery Items -->
+          <div class="hydro-glass p-6 rounded-3xl border border-ocean-700">
+            <h4 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-4 flex items-center gap-2">
+              <i data-lucide="images" class="w-4 h-4"></i> Active Showcase Inventory
+            </h4>
+            <div id="office-inventory-list" class="space-y-3">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <div id="loginModal" class="modal hidden" onclick="if(event.target===this)closeLogin()">
-    <div class="login-card">
-      <button class="close" onclick="closeLogin()">×</button>
-      <span class="eyebrow">WELCOME TO SBT VALUES</span><h2>Sign in</h2><p class="muted">Use an account to make ordering faster.</p>
-      <button class="social google" onclick="demoLogin('Google')"><span>G</span> Continue with Google</button>
-      <button class="social apple" onclick="demoLogin('Apple')"><span>●</span> Continue with Apple</button>
-      <div class="divider"><span>or</span></div>
-      <input id="loginName" placeholder="Your name">
-      <input id="loginEmail" type="email" placeholder="Email address">
-      <button class="dark full" onclick="emailLogin()">Continue with email</button>
-      <small class="muted">Google/Apple buttons are demo placeholders until OAuth credentials are connected.</small>
+  <!-- FOOTER -->
+  <footer class="relative z-10 hydro-glass border-t border-ocean-800 py-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        © 2026 SBT Values Inc. Single File GitHub-Ready Web Application.
+      </div>
+      <div class="flex gap-6">
+        <a href="#section-public" onclick="showSection('public')" class="hover:text-aqua transition">Public Showcase</a>
+        <a href="#section-login" onclick="showSection('login')" class="hover:text-aqua transition">SSO Login</a>
+        <a href="#section-office" onclick="showSection('office')" class="hover:text-aqua transition">Office Admin</a>
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <div id="toast" class="toast"></div>
+  <!-- SCRIPT ENGINE: NAVIGATION, VALVE CONTROLS, DYNAMIC GALLERY & SSO SIMULATION -->
   <script>
-const defaultGallery=[
- {id:1,title:"SBT Values Brand",desc:"A clean identity built around trust and value.",image:""},
- {id:2,title:"Featured Work",desc:"Add your company's projects and products from the office dashboard.",image:""},
- {id:3,title:"New Collection",desc:"Your latest public gallery item can appear here.",image:""}
-];
+    // Initial Lucide Icons Render
+    lucide.createIcons();
 
-let gallery=JSON.parse(localStorage.getItem("sbt_gallery")||"null")||defaultGallery;
-let orders=JSON.parse(localStorage.getItem("sbt_orders")||"[]");
-let customers=JSON.parse(localStorage.getItem("sbt_customers")||"[]");
-let currentUser=JSON.parse(localStorage.getItem("sbt_user")||"null");
+    // Application State
+    let isMainValveOpen = false;
+    let galleryStore = [
+      {
+        id: 1,
+        title: 'SBT Hydro Smart Facility',
+        category: 'Sustainability',
+        desc: 'Zero-carbon hydro powered operational workspace.',
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 2,
+        title: 'NextGen Financial Pipeline',
+        category: 'Fintech Solution',
+        desc: 'High-speed algorithmic trading engine built for enterprise scale.',
+        image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 3,
+        title: 'AI Logistics Flow Platform',
+        category: 'Enterprise Automation',
+        desc: 'Route flow optimization cutting carbon footprint by 40%.',
+        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
 
-function save(){localStorage.setItem("sbt_gallery",JSON.stringify(gallery));localStorage.setItem("sbt_orders",JSON.stringify(orders));localStorage.setItem("sbt_customers",JSON.stringify(customers));}
-function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
-function showPublic(){document.getElementById("publicView").classList.remove("hidden");document.getElementById("officeView").classList.add("hidden");document.getElementById("publicNav").style.display="flex";window.scrollTo({top:0,behavior:"smooth"});renderGallery()}
-function showOffice(){if(!currentUser){openLogin(true);return}document.getElementById("publicView").classList.add("hidden");document.getElementById("officeView").classList.remove("hidden");document.getElementById("publicNav").style.display="none";officeTab("dashboard");renderOffice()}
-function openLogin(forOffice=false){document.getElementById("loginModal").classList.remove("hidden");document.getElementById("loginModal").dataset.office=forOffice?"1":"0"}
-function closeLogin(){document.getElementById("loginModal").classList.add("hidden")}
-function demoLogin(provider){currentUser={name:"Demo User",email:provider.toLowerCase()+"@example.com",provider};localStorage.setItem("sbt_user",JSON.stringify(currentUser));closeLogin();prefillUser();toast(provider+" sign-in demo successful");if(document.getElementById("loginModal").dataset.office==="1")showOffice()}
-function emailLogin(){const name=document.getElementById("loginName").value.trim(),email=document.getElementById("loginEmail").value.trim();if(!name||!email){toast("Please enter name and email");return}currentUser={name,email,provider:"email"};localStorage.setItem("sbt_user",JSON.stringify(currentUser));closeLogin();prefillUser();toast("Signed in successfully");if(document.getElementById("loginModal").dataset.office==="1")showOffice()}
-function logout(){currentUser=null;localStorage.removeItem("sbt_user");showPublic();toast("Logged out")}
-function prefillUser(){if(currentUser){document.getElementById("customerName").value=currentUser.name||"";document.getElementById("customerEmail").value=currentUser.email||""}}
+    // SECTION SWITCHING SYSTEM
+    function showSection(sectionKey) {
+      document.getElementById('section-public').classList.add('hidden');
+      document.getElementById('section-login').classList.add('hidden');
+      document.getElementById('section-office').classList.add('hidden');
 
-function submitOrder(e){e.preventDefault();const o={id:"ORD-"+Date.now().toString().slice(-6),date:new Date().toLocaleString(),name:customerName.value.trim(),email:customerEmail.value.trim(),phone:customerPhone.value.trim(),item:orderItem.value.trim(),message:orderMessage.value.trim(),status:"New"};orders.unshift(o);const exists=customers.find(c=>c.email===o.email);if(!exists)customers.unshift({name:o.name,email:o.email,phone:o.phone});save();e.target.reset();prefillUser();toast("Order received! Connect the backend to email it to your office.");renderOffice()}
-function renderGallery(){const grid=document.getElementById("galleryGrid");grid.innerHTML=gallery.map(g=>`<article class="gallery-card"><div class="gallery-image">${g.image?`<img src="${escapeHtml(g.image)}" alt="${escapeHtml(g.title)}">`:"SBT"}</div><div><h3>${escapeHtml(g.title)}</h3><p>${escapeHtml(g.desc||"")}</p></div></article>`).join("")}
-function addGallery(e){e.preventDefault();const title=galleryTitle.value.trim(),image=galleryImage.value.trim(),desc=galleryDescription.value.trim();gallery.unshift({id:Date.now(),title,image,desc});save();e.target.reset();renderGallery();renderOffice();toast("Gallery item added to the public website")}
-function removeGallery(id){gallery=gallery.filter(g=>g.id!==id);save();renderGallery();renderOffice();toast("Gallery item removed")}
-function officeTab(tab){document.querySelectorAll(".office-tab").forEach(x=>x.classList.add("hidden"));document.getElementById(tab+"Tab").classList.remove("hidden");const titles={dashboard:"Dashboard",orders:"Orders & enquiries",galleryAdmin:"Gallery manager",customers:"Customers"};document.getElementById("officeTitle").textContent=titles[tab]||"Office";renderOffice()}
-function renderOffice(){document.getElementById("metricOrders").textContent=orders.length;document.getElementById("metricGallery").textContent=gallery.length;document.getElementById("metricCustomers").textContent=customers.length;document.getElementById("orderCount").textContent=orders.length;document.getElementById("metricOrders").textContent=orders.length;
-const recent=document.getElementById("recentOrders");recent.innerHTML=orders.slice(0,5).map(orderRow).join("")||empty("No orders yet.");
-document.getElementById("allOrders").innerHTML=orders.map(orderRow).join("")||empty("No orders yet.");
-document.getElementById("customersList").innerHTML=customers.map(c=>`<div class="customer-row"><b>${escapeHtml(c.name)}</b><span>${escapeHtml(c.email)}</span><span>${escapeHtml(c.phone||"—")}</span><span>Customer</span></div>`).join("")||empty("No customers yet.");
-document.getElementById("adminGallery").innerHTML=gallery.map(g=>`<div class="admin-item"><div class="gallery-image">${g.image?`<img src="${escapeHtml(g.image)}" alt="">`:"SBT"}</div><div class="admin-body"><h4>${escapeHtml(g.title)}</h4><p class="muted">${escapeHtml(g.desc||"")}</p><button class="danger" onclick="removeGallery(${g.id})">Remove</button></div></div>`).join("");
-}
-function orderRow(o){return `<div class="order-row"><b>${escapeHtml(o.name)}</b><span>${escapeHtml(o.email)}</span><span><b>${escapeHtml(o.item)}</b><br><small>${escapeHtml(o.message||"No message")}</small></span><span class="status">${escapeHtml(o.status)}</span></div>`}
-function empty(t){return `<p class="muted">${t}</p>`}
-function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-renderGallery();renderOffice();prefillUser();
+      // Reset Nav Button Styles
+      document.getElementById('nav-btn-public').className = "px-3.5 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5";
+      document.getElementById('nav-btn-login').className = "px-3.5 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5";
+      document.getElementById('nav-btn-office').className = "px-3.5 py-2 rounded-xl text-xs font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5";
 
-</script>
+      // Activate Chosen Section
+      document.getElementById('section-' + sectionKey).classList.remove('hidden');
+      document.getElementById('nav-btn-' + sectionKey).className = "px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-cyan-500 text-ocean-950 shadow-md";
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // WATER VALVE HYDRAULIC CONTROL SYSTEM
+    function toggleMainValve() {
+      const valveBtn = document.getElementById('main-valve-btn');
+      const stream = document.getElementById('main-water-stream');
+      const psiText = document.getElementById('psi-value');
+      const statusText = document.getElementById('valve-status-text');
+
+      isMainValveOpen = !isMainValveOpen;
+
+      if (isMainValveOpen) {
+        valveBtn.classList.add('valve-open');
+        stream.style.width = '100%';
+        psiText.innerText = '120';
+        psiText.className = 'text-xl font-black text-aqua font-mono animate-pulse';
+        statusText.innerText = 'VALVE OPEN [100% DISPATCH FLOW]';
+        statusText.className = 'text-aqua font-mono font-bold';
+      } else {
+        valveBtn.classList.remove('valve-open');
+        stream.style.width = '0%';
+        psiText.innerText = '0';
+        psiText.className = 'text-xl font-black text-slate-500 font-mono';
+        statusText.innerText = 'VALVE CLOSED [0% FLOW]';
+        statusText.className = 'text-amber-400 font-mono';
+      }
+    }
+
+    // DYNAMIC GALLERY RENDER ENGINE
+    function renderGallery() {
+      const publicGrid = document.getElementById('public-gallery-grid');
+      const officeList = document.getElementById('office-inventory-list');
+
+      publicGrid.innerHTML = '';
+      officeList.innerHTML = '';
+
+      galleryStore.forEach(item => {
+        // Public Card
+        const cardHtml = `
+          <div class="hydro-glass-card rounded-3xl overflow-hidden shadow-xl flex flex-col group">
+            <div class="relative h-52 overflow-hidden">
+              <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-ocean-950/80 backdrop-blur-md text-[10px] font-bold text-aqua border border-cyan-500/20">
+                ${item.category}
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-lg text-white mb-2">${item.title}</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">${item.desc}</p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-ocean-800 flex items-center justify-between text-[11px] text-slate-500">
+                <span>SBT Verified Project</span>
+                <span class="text-cyan-400 font-bold flex items-center gap-1">Live <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+              </div>
+            </div>
+          </div>
+        `;
+        publicGrid.innerHTML += cardHtml;
+
+        // Office Inventory Row
+        const rowHtml = `
+          <div class="p-3 bg-ocean-950 rounded-xl border border-ocean-800 text-xs flex items-center justify-between">
+            <div>
+              <div class="font-bold text-white">${item.title}</div>
+              <div class="text-[10px] text-slate-500">${item.category}</div>
+            </div>
+            <span class="text-[10px] text-emerald-400 font-mono font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full">Public</span>
+          </div>
+        `;
+        officeList.innerHTML += rowHtml;
+      });
+
+      lucide.createIcons();
+    }
+
+    // GALLERY UPLOAD HANDLER
+    function handleGalleryUpload(e) {
+      e.preventDefault();
+      const title = document.getElementById('gallery-title').value;
+      const category = document.getElementById('gallery-category').value;
+      const desc = document.getElementById('gallery-desc').value;
+      const image = document.getElementById('gallery-image').value || 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80';
+
+      galleryStore.unshift({
+        id: Date.now(),
+        title,
+        category,
+        desc,
+        image
+      });
+
+      renderGallery();
+      e.target.reset();
+      alert('Photo & item successfully published to the Public Interface Gallery!');
+    }
+
+    // ORDER SUBMISSION HANDLER
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      
+      // Auto-trigger water valve effect
+      if(!isMainValveOpen) toggleMainValve();
+
+      document.getElementById('order-form').classList.add('hidden');
+      document.getElementById('order-success-msg').classList.remove('hidden');
+    }
+
+    function resetOrderForm() {
+      document.getElementById('order-form').reset();
+      document.getElementById('order-form').classList.remove('hidden');
+      document.getElementById('order-success-msg').classList.add('hidden');
+    }
+
+    // SSO OAUTH SIMULATION ENGINE
+    function simulateOAuth(provider) {
+      document.getElementById('oauth-actions').classList.add('hidden');
+      const card = document.getElementById('user-info-card');
+      card.classList.remove('hidden');
+
+      if (provider === 'Google') {
+        document.getElementById('user-name').innerText = "Alex Rivera";
+        document.getElementById('user-email').innerText = "alex.rivera@gmail.com";
+        document.getElementById('user-avatar').src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80";
+        document.getElementById('user-provider-badge').innerText = "Google Authenticated";
+      } else {
+        document.getElementById('user-name').innerText = "Jordan Vance";
+        document.getElementById('user-email').innerText = "jordan.vance@icloud.com";
+        document.getElementById('user-avatar').src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80";
+        document.getElementById('user-provider-badge').innerText = "Apple ID Authenticated";
+      }
+    }
+
+    function logoutOAuth() {
+      document.getElementById('oauth-actions').classList.remove('hidden');
+      document.getElementById('user-info-card').classList.add('hidden');
+    }
+
+    function selectWheelValue(idx) {
+      document.getElementById('wheel-0').className = idx === 0 ? "p-4 rounded-2xl bg-ocean-900 border border-cyan-400/50 cursor-pointer transition" : "p-4 rounded-2xl bg-ocean-950/60 border border-ocean-800 cursor-pointer transition";
+      document.getElementById('wheel-1').className = idx === 1 ? "p-4 rounded-2xl bg-ocean-900 border border-cyan-400/50 cursor-pointer transition" : "p-4 rounded-2xl bg-ocean-950/60 border border-ocean-800 cursor-pointer transition";
+    }
+
+    // Initialize initial gallery load
+    renderGallery();
+  </script>
 </body>
 </html>
